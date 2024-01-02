@@ -14,7 +14,8 @@ const blogSchema = mongoose.Schema({
         type: Boolean,
         required: true
     },
-    title: credentials
+    title: credentials,
+    route: credentials,
 });
 
 const Blog = mongoose.model("Blog", blogSchema);

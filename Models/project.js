@@ -9,6 +9,8 @@ const projectSchema = mongoose.Schema({
     name: credentials,
     description: credentials,
     coverPhoto: credentials,
+    git: String,
+    site: String,
     pictures: [ String ],
     videos: [ String ],
     techStack: [ String ]

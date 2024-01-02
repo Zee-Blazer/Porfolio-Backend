@@ -1,15 +1,21 @@
 const express = require("express");
 const mongoose = require("mongoose");
 
-require("dotenv");
+const cors = require("cors");
 
-mongoose.connect("mongodb://localhost:27017/portfolio");
+require("dotenv").config();
+
+mongoose.connect(process.env.ATLAS_URL); 
+// mongoose.connect(process.env.MONGODB__URL); 
 const DB = mongoose.connection
 DB.once("open", function () {
     console.log("Database is running successfully");
 })
 
 const app = express();
+
+// CORS for application API
+app.use(cors());
 
 // Body parser Middleware
 app.use(express.json());

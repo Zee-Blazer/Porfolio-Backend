@@ -7,7 +7,7 @@ router.post('/new-msg', (req, res) => {
     const msg = new Message(req.body);
 
     msg.save()
-        .then( doc => res.status(200) )
+        .then( doc => res.status(200).json({ msg: "Sent successfully!!", doc }) )
         .catch( err => res.status(400).json({
             msg: "There was an error sending message",
             solution: "Please try again",

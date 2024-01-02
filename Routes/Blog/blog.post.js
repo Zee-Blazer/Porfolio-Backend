@@ -7,12 +7,13 @@ const { Blog } = require('../../Models/blog');
 
 router.post('/new-blog', (req, res) => {
     const blog = new Blog({
-        image: req.body.img,
+        image: req.body.image,
         date: moment().format("LL"),
         summary: req.body.summary,
         body: req.body.body,
         status: req.body.status,
-        title: req.body.title
+        title: req.body.title,
+        route: req.body.route
     });
 
     blog.save()
