@@ -6,7 +6,7 @@ const cors = require("cors");
 require("dotenv").config();
 
 // mongoose.connect(process.env.ATLAS_URL); 
-mongoose.connect(process.env.ATLAS_URL); 
+mongoose.connect(process.env.REAL_ATLAS_URL); 
 const DB = mongoose.connection
 DB.once("open", function () {
     console.log("Database is running successfully");
